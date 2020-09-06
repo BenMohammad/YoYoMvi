@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="imageviewBtnPad">4dp</dimen>
+    <dimen name="imageviewMargin">2dp</dimen>
+    <dimen name="llPadding">4dp</dimen>
+</resources>
