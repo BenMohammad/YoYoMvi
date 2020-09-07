@@ -60,4 +60,10 @@ public class EditorFragment extends Fragment {
     }
 
     private void bind(){}
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        disposables.dispose();
+    }
 }
