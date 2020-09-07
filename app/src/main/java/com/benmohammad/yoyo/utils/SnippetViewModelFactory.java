@@ -28,12 +28,7 @@ public class SnippetViewModelFactory implements ViewModelProvider.Factory {
     @NonNull
     @Override
     public <T extends ViewModel> T create(@NonNull Class<T> modelClass) {
-        if(modelClass == EditorViewModel.class) {
-            return (T) new EditorViewModel(
-                    new EditorActionProcessorHolder(
-                            Injection.provideSnippetRepository(applicationContext),
-                            Injection.provideSchedulerProvider()));
-        }
+
         throw new IllegalArgumentException("Unknown model class: " + modelClass);
     }
 }
