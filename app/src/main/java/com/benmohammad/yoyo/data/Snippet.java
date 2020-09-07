@@ -12,13 +12,11 @@ public final class Snippet {
     @Nullable
     private final String code;
 
-    @Nullable
-    private final String comment;
 
-    public Snippet(@Nullable String title, @Nullable String code, @Nullable String comment) {
+    public Snippet(@Nullable String title, @Nullable String code) {
         this.title = title;
         this.code = code;
-        this.comment = comment;
+
     }
 
     @Nullable
@@ -31,10 +29,6 @@ public final class Snippet {
         return code;
     }
 
-    @Nullable
-    public String getComment() {
-        return comment;
-    }
 
     @Override
     public boolean equals(Object o) {
@@ -42,21 +36,19 @@ public final class Snippet {
         if (o == null || getClass() != o.getClass()) return false;
         Snippet snippet = (Snippet) o;
         return Objects.equals(title, snippet.title) &&
-                Objects.equals(code, snippet.code) &&
-                Objects.equals(comment, snippet.comment);
+                Objects.equals(code, snippet.code);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(title, code, comment);
+        return Objects.hash(title, code);
     }
 
     @Override
     public String toString() {
         return "Snippet{" +
                 "title='" + title + '\'' +
-                ", code='" + code + '\'' +
-                ", comment='" + comment + '\'' +
+                ", code='" + code +
                 '}';
     }
 }

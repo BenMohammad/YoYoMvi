@@ -31,6 +31,7 @@ public class SnippetViewModelFactory implements ViewModelProvider.Factory {
         if(modelClass == EditorViewModel.class) {
             return (T) new EditorViewModel(
                     new EditorActionProcessorHolder(
+                            Injection.provideSnippetRepository(applicationContext),
                             Injection.provideSchedulerProvider()));
         }
         throw new IllegalArgumentException("Unknown model class: " + modelClass);

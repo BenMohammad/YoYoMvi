@@ -5,14 +5,11 @@ import androidx.annotation.Nullable;
 
 import com.benmohammad.yoyo.base.MviResult;
 import com.benmohammad.yoyo.utils.Status;
-import com.benmohammad.yoyo.utils.UiNotification;
 import com.google.auto.value.AutoValue;
 
 import static com.benmohammad.yoyo.utils.Status.FAILURE;
 import static com.benmohammad.yoyo.utils.Status.LOADING;
 import static com.benmohammad.yoyo.utils.Status.SUCCESS;
-import static com.benmohammad.yoyo.utils.UiNotification.HIDE;
-import static com.benmohammad.yoyo.utils.UiNotification.SHOW;
 
 public interface EditorResult extends MviResult {
 
@@ -28,15 +25,18 @@ public interface EditorResult extends MviResult {
         @Nullable
         abstract Throwable error();
 
-        @NonNull CompileInputResult success(@NonNull String output) {
+        @NonNull
+        public static CompileInputResult success(@NonNull String output) {
             return new AutoValue_EditorResult_CompileInputResult(SUCCESS, output, null);
         }
 
-        @NonNull CompileInputResult failure(Throwable error) {
+        @NonNull
+        public static CompileInputResult failure(Throwable error) {
             return new AutoValue_EditorResult_CompileInputResult(FAILURE, null, error);
         }
 
-        @NonNull CompileInputResult loading() {
+        @NonNull
+        public static CompileInputResult loading() {
             return new AutoValue_EditorResult_CompileInputResult(LOADING, null, null);
         }
     }
@@ -109,4 +109,57 @@ public interface EditorResult extends MviResult {
             return new AutoValue_EditorResult_OpenSnippetsResult(FAILURE, error);
         }
     }
+
+    @AutoValue
+    abstract class SearchOutputResult implements EditorResult {
+
+        @Nullable
+        abstract Status status();
+
+
+        @Nullable
+        abstract Throwable error();
+
+        @NonNull
+        public static SearchOutputResult success() {
+            return new AutoValue_EditorResult_SearchOutputResult(SUCCESS, null);
+        }
+
+        @NonNull
+        public static SearchOutputResult failure(Throwable error) {
+            return new AutoValue_EditorResult_SearchOutputResult(FAILURE, error);
+        }
+
+        @NonNull
+        public static SearchOutputResult loading() {
+            return new AutoValue_EditorResult_SearchOutputResult(LOADING, null);
+        }
+    }
+
+    @AutoValue
+    abstract class ShareOutputWhatsAppResult implements EditorResult {
+
+        @Nullable
+        abstract Status status();
+
+
+        @Nullable
+        abstract Throwable error();
+
+        @NonNull
+        public static ShareOutputWhatsAppResult success() {
+            return new AutoValue_EditorResult_ShareOutputWhatsAppResult(SUCCESS, null);
+        }
+
+        @NonNull
+        public static ShareOutputWhatsAppResult failure(Throwable error) {
+            return new AutoValue_EditorResult_ShareOutputWhatsAppResult(FAILURE, error);
+        }
+
+        @NonNull
+        public static ShareOutputWhatsAppResult loading() {
+            return new AutoValue_EditorResult_ShareOutputWhatsAppResult(LOADING, null);
+        }
+    }
+
 }
