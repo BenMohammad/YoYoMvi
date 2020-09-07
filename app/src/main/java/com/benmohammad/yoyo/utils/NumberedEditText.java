@@ -23,7 +23,7 @@ public class NumberedEditText extends AppCompatEditText {
         paint = new Paint();
         paint.setStyle(Paint.Style.FILL);
         paint.setColor(getResources().getColor(android.R.color.white));
-        paint.setTextSize(24);
+        paint.setTextSize(28);
         setHorizontallyScrolling(false);
         setMovementMethod(new ScrollingMovementMethod());
     }
@@ -33,7 +33,7 @@ public class NumberedEditText extends AppCompatEditText {
         super.onDraw(canvas);
         int baseLine = getBaseline();
         for(int i = 0; i < getLineCount(); i++) {
-            canvas.drawText(String.format(" %d  ", (i + 1)), rect.left, baseLine, paint);
+            canvas.drawText(String.format(" %d   ", (i + 1)), rect.left, baseLine, paint);
             baseLine += getLineHeight();
         }
     }

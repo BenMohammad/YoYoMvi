@@ -24,23 +24,24 @@
 
 
 
-        <com.benmohammad.reelz.widget.NumberedEditText
+        <com.benmohammad.yoyo.utils.NumberedEditText
             android:id="@+id/codebox"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_alignBottom="@id/cardViewOutput"
             android:layout_alignParentTop="true"
-            android:layout_marginBottom="8dp"
-            android:layout_weight="14"
-            android:background="#000"
+            android:layout_margin="@dimen/numberedETMargin"
+            android:layout_marginBottom="@dimen/numberedETMarginBottom"
+            android:layout_weight="16"
+            android:background="@color/colorPrimaryDark"
             android:fontFamily="monospace"
             android:gravity="top|left"
             android:hint="Type Java code here...."
             android:inputType="textMultiLine|textNoSuggestions"
-            android:paddingLeft="28dp"
+            android:paddingLeft="14dp"
             android:textColor="#fff"
             android:textColorHint="#D3D3D3"
-            android:textSize="14sp"
+            android:textSize="@dimen/textSizeNumberedEt"
             android:visibility="visible" />
 
         <include layout="@layout/card_output"/>

@@ -3,4 +3,9 @@
     <dimen name="imageviewBtnPad">4dp</dimen>
     <dimen name="imageviewMargin">2dp</dimen>
     <dimen name="llPadding">4dp</dimen>
+    <dimen name="numberedETMarginBottom">8dp</dimen>
+    <dimen name="numberedETPadding">12dp</dimen>
+    <dimen name="numberedETPaddingLeft">28dp</dimen>
+    <dimen name="textSizeNumberedEt">14sp</dimen>
+    <dimen name="numberedETMargin">12dp</dimen>
 </resources>
